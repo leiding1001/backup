@@ -1,0 +1,27 @@
+
+
+http://www.otms.cn/--官网
+https://demo.otms.cn/--测试网站
+	username:sh00104
+	password:Michael12
+	
+basecamp.com
+https://bitbucket.org/ --代码
+	https://lei-ding@bitbucket.org/opentrans/android.git
+https://opentrans.atlassian.net--项目
+http://mail.zoho.com--email
+username:lei.ding@otms.cn
+password:dl074287
+
+http://blog.csdn.net/individualing/article/details/7880479
+
+
+极光推送
+username:shaohua.deng@otms.cn
+password:otmscn
+
+//message
+https://www.luosimao.com
+shaohua.deng: shaohua.deng@otms.cn
+shaohua.deng: Pushotms2014
+
