@@ -1,6 +1,27 @@
-git 撤销 commit
+Git 撤销 commit
 	git reset --hard commit_id
-	彻底回退到某个版本
+	彻底回退到某个版ben
+修改最后一次提交
+	git commit --amend 重新提交
+修改已经暂存的文件
+	git reset HEAD <file>
+取消对文件的修改
+	git checkout <file>
 git log 
 	-p 选项展开显示每次提交的内容差异
 	-2 则仅现实最近的两侧更新.
+远程仓库的使用
+	察看当前的远程库
+		git remote -v
+	克隆
+		git clone url
+ 	添加
+		git remote add name url
+	抓去仓库信息
+		git fetch name
+	push
+		git push -u remote-name brach-name
+	远程仓库的删除和重命名
+		git remote name name1 name2
+		git remote rm remote-name
+
