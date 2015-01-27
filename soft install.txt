@@ -25,3 +25,22 @@ zoho email
 	lei.ding@otms.cn
 	Incoming server: imap.zoho.com, Port: 993, SSL
 	Outgoing server: smtp.zoho.com, Port: 465, SSL
+
+
+
+firefox安装步骤 
+步骤如下：
+
+1)前去Firefox官方网站下载新版的Firefox.
+              附：http://www.mozillaonline.com/
+2)解压缩你所下载的文件包.
+              $ tar -jxvf firefox-3.6.11.tar.bz2  (注意书写自己所下载的版本号)
+3)然后将解压好的目录移动到/usr/lib文件夹下。
+              $ sudo mv firefox /usr/lib/firefox-3.6.11
+3)然后进入目录/usr/bin
+              $ cd /usr/bin
+4)然后建立一个链接
+              $  sudo ln -s /usr/lib/firefox-3.6.11/firefox  firefox
+5)然后你点击系统上firefox的图标就是最新了
+
+6)然后您可以去个性化设置你的Firefox。（Tools/Add-ons）。 
