@@ -1,0 +1,23 @@
+[user]
+	name = lei.ding
+	email = lei.ding@otms.cn
+[credential]
+	helper = cache
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding=GB2312
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	su = submodule update --init --recursive
+	pr = pull --rebase
+	ps = !git pull --rebase && git submodule update --init --recursive
+	pc = !git cl && git ps
+	lg = log -m --simplify-merges --color --graph --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %Cblue%an <%ae>%Creset' --abbrev
+[core]
+	editor = vi
+[merge]
+	tool = vimdiff
