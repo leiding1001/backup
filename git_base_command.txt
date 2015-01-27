@@ -1,0 +1,3 @@
+git 撤销 commit
+	git reset --hard commit_id
+	彻底回退到某个版本
