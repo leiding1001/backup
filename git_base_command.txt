@@ -1,3 +1,6 @@
 git 撤销 commit
 	git reset --hard commit_id
 	彻底回退到某个版本
+git log 
+	-p 选项展开显示每次提交的内容差异
+	-2 则仅现实最近的两侧更新.
