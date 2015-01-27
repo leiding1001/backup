@@ -23,5 +23,31 @@ git log
 		git push -u remote-name brach-name
 	远程仓库的删除和重命名
 		git remote name name1 name2
-		git remote rm remote-name
+		git remote rm rem://github.com/leiding1001/backup.git remtoe-name
+git标签
+	显示已有的标签
+		git tag
+	新建标签
+		含注释的标签
+		git tag -a v.14 -m "dddd"	
+	察看相应的版本信息	
+		git show v.14
+	签署标签
+		
 
+
+A
+A
+A
+A
+A
+A
+B
+B
+A
+		不含注释的标签
+		
+A
+D
+D
+	i新建	
