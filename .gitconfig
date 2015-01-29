@@ -16,7 +16,8 @@
 	pr = pull --rebase
 	ps = !git pull --rebase && git submodule update --init --recursive
 	pc = !git cl && git ps
-	lg = log -m --simplify-merges --color --graph --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %Cblue%an <%ae>%Creset' --abbrev
+	lg = log -m --simplify-merges --color --graph --pretty=format:'%Cred%h%C(yellow)%d%Creset -%s %Cgreen(%cr) %Cblue%an <%ae>%Creset' --abbrev --date=short
+	last = log -1 HEAD
 [core]
 	editor = vi
 [merge]
