@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules">
+    <target name="auto-demo-debug">
+        <property name="build.last.baidu.apikey" value="${baidu.debug.demo.apikey}" />
+        <property name="build.last.is.packaging.debug" value="true" />
+        <propertyfile file="auto.prop">
+            <entry key="build.last.is.packaging.debug" value="${build.last.is.packaging.debug}" />
+            <entry key="build.last.baidu.apikey" value="${build.last.baidu.apikey}" />
+            <entry key="build.last.apk.file.dir" value="${debug.demo.apk.file.dir}" />
+        </propertyfile>
+        
+        <antcall target="-auto">
+        </antcall>
+    </target>
+
+    <target name="auto-demo-release">
+		<property name="build.last.baidu.apikey" value="${baidu.release.demo.apikey}" />
+        <property name="build.last.is.packaging.debug" value="false" />
+        <propertyfile file="auto.prop">
+            <entry key="build.last.is.packaging.debug" value="${build.last.is.packaging.debug}" />
+            <entry key="build.last.baidu.apikey" value="${build.last.baidu.apikey}" />
+            <entry key="build.last.apk.file.dir" value="${release.demo.apk.file.dir}" />
+        </propertyfile>
+        <antcall target="-auto">
+        </antcall>
+    </target>
+    
+    
+    <target name="-auto">
+        <!-- 复制项目到临时目录，避免替换打包影响本目录代码 -->
+        <dirname property="auto.here.dir" file="${ant.file}" />
+        <property name="auto.project.tmp.dir" value="${auto.here.dir}Tmp" />
+        <delete dir="${auto.project.tmp.dir}" />
+        <copy todir="${auto.project.tmp.dir}" overwrite="true">
+            <fileset dir="./">
+                <!-- 忽略隐藏文件 -->
+                <exclude name=".*" />
+                <exclude name=".*/*" />
+            </fileset>
+        </copy>
+        <!-- replace the baiduMap key  android:name="com.baidu.lbsapi.API_KEY"-->
+        <echo>==================>>>${auto.project.tmp.dir}>>>>>>${build.last.baidu.apikey}</echo>
+		<replaceregexp
+            encoding="utf-8"
+            file="${auto.project.tmp.dir}/AndroidManifest.xml"
+            match='(\s+)android:name="com.baidu.lbsapi.API_KEY"(\s+)android:value="[a-zA-Z0-9]+"'
+            replace=' android:name="com.baidu.lbsapi.API_KEY" android:value="${build.last.baidu.apikey}"' />
+		
+        <!-- 解析AndroidManifest.xml 获得包名 -->
+        <xmlproperty file="AndroidManifest.xml" collapseAttributes="true" />
+        <!-- 写入配置文件 -->
+        <propertyfile file="${auto.project.tmp.dir}/auto.prop">
+            <entry key="auto.package" value="${manifest.package}" />
+            <entry key="auto.final.versionCode" value="${manifest.android:versionCode}" />
+            <entry key="auto.final.versionName" value="${manifest.android:versionName}" />
+            <entry key="auto.project.tmp.dir" value="${auto.project.tmp.dir}" />
+        </propertyfile>
+
+        <!-- 检查参数或配置中是否指定了包名 -->
+        <condition property="auto.has.package">
+            <isset property="package" />
+        </condition>
+
+        <!-- 修改包名 -->
+        <antcall target="-change-package-name">
+        </antcall>
+
+
+        <condition property="auto.version.is.time">
+            <equals arg1="${version}" arg2="time" />
+        </condition>
+        <condition property="auto.version.is.addone">
+            <equals arg1="${version}" arg2="addone" />
+        </condition>
+        <!-- 修改版本号 -->
+        <antcall target="-change-version-time">
+        </antcall>
+        <antcall target="-change-version-addone">
+        </antcall>
+
+        <condition property="build.last.target" value="debug" else="release">
+            <istrue value="${build.last.is.packaging.debug}" />
+        </condition>
+
+        <!-- 执行ant debug或者ant release进行打包 -->
+        <exec dir="${auto.project.tmp.dir}" executable="ant">
+            <arg value="${build.last.target}" />
+        </exec>
+
+        <!-- 复制打好的包 到 本目录下 -->
+        <antcall target="-cp-out-final-file">
+        </antcall>
+
+        <property file="${auto.project.tmp.dir}/auto.prop" />
+        <echo message="package: ${auto.package}" />
+        <echo message="versionCode: ${auto.final.versionCode}" />
+        <echo message="versionName: ${auto.final.versionName}" />
+    </target>
+
+    <target name="-change-package-name" if="auto.has.package">
+        <propertyfile file="${auto.project.tmp.dir}/auto.prop">
+            <entry key="auto.package" value="${package}" />
+        </propertyfile>
+
+        <echo message="old package: ${manifest.package}" />
+        <echo message="new package: ${package}" />
+        <replace dir="${auto.project.tmp.dir}" excludes="build.xml" token="${manifest.package}" value="${package}">
+        </replace>
+    </target>
+    
+    
+    <!-- 使用时间戳作为版本数字，使用日期作为版本名，比如Ubuntu 13.04使用yy.MM，MIUI 4.1.17使用年的最后一位.M.d
+        本脚本使用 yy.M.d.HHmm，比如14.1.1.1800 表示 14年1月1日18点00分。
+        由于开发时经常发布版本，所以精确到分钟。可能几分钟前刚打的包，改了字符串，又重新打包。
+    -->
+    <target name="-change-version-time" if="auto.version.is.time">
+        <script language="javascript">
+            <![CDATA[
+                property = project.setProperty("now",Math.floor((new Date()).getTime()/1000));
+            ]]>
+        </script>
+        <tstamp>
+            <format property="auto.final.versionCode"
+                  pattern="${now}" />
+            <format property="auto.final.versionName"
+                  pattern="yy.M.d.HHmm" />
+        </tstamp>
+        <propertyfile file="${auto.project.tmp.dir}/auto.prop">
+            <entry key="auto.final.versionCode" value="${auto.final.versionCode}" />
+            <entry key="auto.final.versionName" value="${auto.final.versionName}" />
+        </propertyfile>
+        <echo message="versionCode: ${auto.final.versionCode}" />
+        <echo message="versionName: ${auto.final.versionName}" />
+        <replaceregexp file="${auto.project.tmp.dir}/AndroidManifest.xml"
+           match="android:versionCode='(\d+)'"
+           replace="android:versionCode='${auto.final.versionCode}'"
+        />
+        <replaceregexp file="${auto.project.tmp.dir}/AndroidManifest.xml"
+           match="android:versionName='([a-zA-Z0-9\.]+)'"
+           replace="android:versionName='${auto.final.versionName}'"
+        />
+    </target>
+	<!--使android:versionName版本自动加1 -->
+    <target name="-change-version-addone" if="auto.version.is.addone">
+		<echo>-----------------------------------------版本修改前：${manifest.android:versionName}</echo>
+	<echo>-----------------------------------------版本修改后：${auto.final.versionName}</echo>
+        
+        <replaceregexp file="${auto.project.tmp.dir}/AndroidManifest.xml"
+           match="android:versionName='([a-zA-Z0-9\.]+)'"
+           replace="android:versionName='${auto.final.versionName}'"
+        />
+        <replaceregexp file="AndroidManifest.xml"
+           match="android:versionName='([a-zA-Z0-9\.]+)'"
+           replace="android:versionName='${auto.final.versionName}'"
+        />
+    </target>
+    <target name="-cp-out-final-file">
+         <tstamp>
+            <format
+                pattern="yyyyMMdd"
+                property="nowFormat" />
+        </tstamp>
+        <property file="${auto.project.tmp.dir}/auto.prop" />
+        <condition property="build.last.target" value="debug" else="release">
+            <istrue value="${build.last.is.packaging.debug}" />
+        </condition>
+        <copy 
+            file="${auto.project.tmp.dir}/${out.dir}/${ant.project.name}-${build.last.target}.apk" 
+            tofile="${build.last.apk.file.dir}/${ant.project.name}-${build.last.target}${auto.final.versionName}_${nowFormat}.apk" 
+            overwrite="true">
+        </copy>
+        <delete file="auto.prop" />
+    </target>
+
+</project>
