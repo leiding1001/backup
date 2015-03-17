@@ -51,4 +51,10 @@ export PATH=$PATH:${ANDROID_HOME}/platform-tools/
 export ANT_HOME=/usr/lib/jvm/ant-1.9.4
 export PATH=${ANT_HOME}/bin:$PATH
 
+
+#tomcat 7.0
+export TOMCAT_HOME=/usr/lib/jvm/tomcat7.0/
+export PATH=$PATH:${TOMCAT_HOME}/bin
+export CATALINA_HOME=${TOMCAT_HOME}
+
 source ~/.bashrc
