@@ -1,0 +1,52 @@
+官网
+	http://jenkins-ci.org/
+
+install
+	.............
+
+run jenkins as a different user on ubuntu
+	Step 1
+		The main thing is to update the JENKINS_USER environment variable. Here's a patch showing how to change the user to ptran.
+		BEGIN PATCH
+		--- etc/default/jenkins.old     2011-10-28 17:46:54.410305099 -0700
+		+++ etc/default/jenkins 2011-10-28 17:47:01.670369300 -0700
+		@@ -13,7 +13,7 @@
+		 PIDFILE=/var/run/jenkins/jenkins.pid
+
+		 # user id to be invoked as (otherwise will run as root; not wise!)
+		-JENKINS_USER=jenkins
+		+JENKINS_USER=ptran
+
+		 # location of the jenkins war file
+		 JENKINS_WAR=/usr/share/jenkins/jenkins.war
+		--- etc/init.d/jenkins.old      2011-10-28 17:47:20.878539172 -0700
+		+++ etc/init.d/jenkins  2011-10-28 17:47:47.510774714 -0700
+		@@ -23,7 +23,7 @@
+
+		 #DAEMON=$JENKINS_SH
+		 DAEMON=/usr/bin/daemon
+		-DAEMON_ARGS="--name=$NAME --inherit --env=JENKINS_HOME=$JENKINS_HOME --output=$JENKINS_LOG -   -pidfile=$PIDFILE" 
+		+DAEMON_ARGS="--name=$JENKINS_USER --inherit --env=JENKINS_HOME=$JENKINS_HOME --output=$JENKINS_LOG --pidfile=$PIDFILE" 
+
+		 SU=/bin/su
+		END PATCH
+	Step 2
+		Update ownership of jenkins directories:
+		chown -R ptran /var/log/jenkins
+		chown -R ptran /var/lib/jenkins
+		chown -R ptran /var/run/jenkins
+		chown -R ptran /var/cache/jenkins
+	Step 3
+		Restart jenkins
+		sudo service jenkins restart
+run jenkins as a different user on mac	
+
+
+unstall jenkins from ubuntu 
+	sudo apt-get --purge remove jenkins
+	sudo rm .jenkins
+	sudo rm /opt/jenkins.jar
+
+
+
+
