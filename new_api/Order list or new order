@@ -1,0 +1,100 @@
+Order list or new order
+
+{
+	“token”:{
+		“orders”:[
+        		"order": {
+                    “id”:”290349”,
+                    "num": "SH00202003751",
+                    "prevM": {
+                            "id": "MILESTONE_3",
+                            "actual": "2015-03-23T13:19:36.493+08:00",
+                            "source": "SHIPPER"
+                        },
+        	       "nextM":{
+                            "id": "MILESTONE_4",
+                            "sla": "2015-03-23T13:19:36.493+08:00",
+                            "source": "UNKNOWN"
+                        },		
+                    "quantity": 50,
+                    "kg": 1100,
+                    "cmb": 1.03,        
+                    "from": { 
+                        "addr": "上海松江区", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    }, 
+                    "to": { 
+                        "addr": "谁谁谁", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    } 
+                    "epodRequired": true,
+                    "recalled": false,
+                    "epod": "CLIENT_REJECTED"          
+                }
+            }
+        },
+        "order": {
+                    “id”:”290349”,
+                    "num": "SH00202003751",
+                    "prevM": {
+                            "id": "MILESTONE_3",
+                            "actual": "2015-03-23T13:19:36.493+08:00",
+                            "source": "SHIPPER"
+                        },
+                    "nextM":{
+                            "id": "MILESTONE_4",
+                            "sla": "2015-03-23T13:19:36.493+08:00",
+                            "source": "UNKNOWN"
+                        },      
+                    "quantity": 50,
+                    "kg": 1100,
+                    "cmb": 1.03,        
+                    "from": { 
+                        "addr": "上海松江区", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    }, 
+                    "to": { 
+                        "addr": "谁谁谁", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    } 
+                    "epodRequired": true,
+                    "recalled": false,
+                    "epod": "CLIENT_REJECTED"          
+                }
+            }
+        },
+        "order": {
+                    “id”:”290349”,
+                    "num": "SH00202003751",
+                    "prevM": {
+                            "id": "MILESTONE_3",
+                            "actual": "2015-03-23T13:19:36.493+08:00",
+                            "source": "SHIPPER"
+                        },
+                "nextM":{
+                            "id": "MILESTONE_4",
+                            "sla": "2015-03-23T13:19:36.493+08:00",
+                            "source": "UNKNOWN"
+                        },      
+                    "quantity": 50,
+                    "kg": 1100,
+                    "cmb": 1.03,        
+                    "from": { 
+                        "addr": "上海松江区", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    }, 
+                    "to": { 
+                        "addr": "谁谁谁", 
+                        "end": "2015-03-23T18:00:00+08:00", 
+                    } 
+                    "epodRequired": true,
+                    "recalled": false,
+                    "epod": "CLIENT_REJECTED"          
+                }
+            }
+        }
+]
+"pageNumber":1
+"hasMore":false
+	}
+}

@@ -1,0 +1,147 @@
+{
+    "token": {
+        "id": "3M444LMRHKRPXIYYUBETPGSW",
+        "creationDate": "2015-03-23T14:33:26.211+08:00",
+        "expirationDate": "2015-05-22T14:33:26.211+08:00",
+        "order": {
+            "orderNumber": "SH00202003751",
+	    "lasttmilestone": 
+		{
+		    "id": "MILESTONE_3",
+		    "actual": "2015-03-23T13:19:36.493+08:00",
+		    "updateSource": "SHIPPER"
+		},
+	    "nextmilestone": 
+		{
+		    "id": "MILESTONE_4",
+		    "actual": "2015-03-23T13:19:36.493+08:00",
+		    "updateSource": "UNKNOWN"
+		},
+		
+            "totalQuantity": 50,
+            "totalWeight": 1100,
+            "totalVolume": 1.03,
+            "pickupPointAddress": "上海松江区",
+            "deliveryPointAddress": "谁谁谁",
+            "deliveryDate": "2015-03-23T00:00:00+08:00",
+            "pickupDate": "2015-03-23T00:00:00+08:00",
+            "pickupTime": 2,
+            "deliveryTime": 4,
+            "isEpodRequired": true,
+            "isRecalled": false,
+            "barcodeNumber": "0600879764937",
+            "epodStatus": "CLIENT_REJECTED"
+            "from": {
+                "lat": 12.45,
+                "lng": 135.4,
+                "fence": 5000
+            },
+            "to": {
+                "lat": 87.45,
+                "lng": 935.4,
+                "fence": 5000
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "token": {
+        "id": "3M444LMRHKRPXIYYUBETPGSW",
+        "creationDate": "2015-03-23T14:33:26.211+08:00",
+        "expirationDate": "2015-05-22T14:33:26.211+08:00",
+        "order": {
+            "orderNumber": "SH00202003751",
+            "lasttmilestone": {
+                    "id": "MILESTONE_3",
+                    "actual": "2015-03-23T13:19:36.493+08:00",
+                    "updateSource": "SHIPPER"
+                },
+	    "nextmilestone":{
+                    "id": "MILESTONE_4",
+                    "actual": "2015-03-23T13:19:36.493+08:00",
+                    "updateSource": "UNKNOWN"
+                },
+		
+            "totalQuantity": 50,
+            "totalWeight": 1100,
+            "totalVolume": 1.03,
+        
+	    "pickupInfos":{
+		    "pickupPointAddress": "上海松江区",
+		    "pickupDate": "2015-03-23T00:00:00+08:00",
+		    "pickupTime": 2,
+	            "lat": 12.45,
+	            "lng": 135.4,
+	            "fence": 5000,
+		     "XXXX":true,
+		    "radius":500
+		}
+	    "deliveryInfos":{
+		    "deliveryPointAddress": "谁谁谁",
+		    "deliveryDate": "2015-03-23T00:00:00+08:00",
+		    "deliveryTime": 4,
+		    "lat": 87.45,
+		    "lng": 935.4,
+		    "fence": 5000,
+		    "XXXX":true,
+	            "radius":500	
+		},
+            "isEpodRequired": true,
+            "isRecalled": false,
+            "barcodeNumber": "0600879764937",
+            "epodStatus": "CLIENT_REJECTED"
+          
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

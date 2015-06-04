@@ -1,0 +1,102 @@
+{
+    "token": {
+        "id": "3VJCBH45YA6JARZ65WDJUM77",
+        "type": "Order",
+        "role": "Driver",
+        "creationDate": "2015-05-31T19:36:05.495+08:00",
+        "expirationDate": "2015-06-13T00:00:00+08:00",
+        "order": {
+            "shipperName": "东方国际贸易（上海）有限责任公司",
+            "orderNumber": "SH00105066522",
+            "clientReferenceNumber": "xj0530-dl",
+            "loadingByDriver": false,
+            "unloadingByDriver": false,
+            "orderlines": {
+                "productName": "西瓜",
+                "unitType": 2
+            },
+            "milestones": [
+                {
+                    "id": "MILESTONE_1",
+                    "actual": "2015-05-30T23:49:43.867+08:00",
+                    "updateSource": "SHIPPER"
+                },
+                {
+                    "id": "MILESTONE_3",
+                    "actual": "2015-05-31T19:36:05.169+08:00",
+                    "updateSource": "ME"
+                },
+                {
+                    "id": "MILESTONE_4",
+                    "actual": "2015-06-01T14:56:14.005+08:00",
+                    "sla": "2015-05-29T23:59:59.999+08:00",
+                    "updateSource": "DRIVER"
+                },
+                {
+                    "id": "MILESTONE_5",
+                    "actual": "2015-06-01T14:59:32.840+08:00",
+                    "sla": "2015-06-03T23:59:59.999+08:00",
+                    "updateSource": "DRIVER"
+                }
+            ],
+            "truckType": 1,
+            "transportType": "LTL",
+            "totalQuantity": 50,
+            "totalWeight": 500,
+            "totalVolume": 60000,
+            "pickupPointCompanyName": "79测试上海",
+            "origin": "200***,上海市城区（不含郊县）",
+            "pickupPointAddress": "浦东新区东方路788号",
+            "pickupPointContactName": "shelly xu",
+            "pickupPointContactDeskPhoneFull": "",
+
+            "deliveryPointCompanyName": "79测试收货公司2",
+            "destination": "211***,南京市",
+            "deliveryPointAddress": "鼓楼区汉中路2号",
+            "deliveryPointContactName": "徐收货",
+            "deliveryPointContactEmail": "otmsxj@126.com",
+            "deliveryPointContactDeskPhoneFull": "",
+            "deliveryDate": "2015-06-03T00:00:00+08:00",
+
+            "pickupDate": "2015-05-29T00:00:00+08:00",
+
+            "contactInformation": {
+                "hotline": 158123423412,
+                "email": "michael.liu@otms.cn",
+                "companyName": "东方国际贸易（上海）有限责任公司"
+            },
+            "isEpodRequired": false,
+            "isRecalled": false,
+            "barcodeNumber": "0008009838679",
+            "epodStatus": "NOT_REQUIRED",
+            "isDriverOnline": false,
+            "isShipFromOnline": true,
+            "isShipToOnline": true,
+            "from": {
+                "company": "79测试上海",
+                "zipcode": "200***,上海市城区（不含郊县）",
+                "addr": "浦东新区东方路788号",
+                "contact": "shelly xu",
+                "start": "2015-05-29T00:00:00+08:00",
+                "end": "2015-05-29T23:59:59.999+08:00",
+                "lat": 31.233516,
+                "lng": 121.530314,
+                "fence": 5
+            },
+            "to": {
+                "company": "79测试收货公司2",
+                "zipcode": "211***,南京市",
+                "addr": "鼓楼区汉中路2号",
+                "contact": "徐收货",
+                "start": "2015-06-03T00:00:00+08:00",
+                "end": "2015-06-03T23:59:59.999+08:00",
+                "lat": 32.048764,
+                "lng": 118.789253,
+                "fence": 5
+            }
+        },
+        "notifyOnOrderPickup": true,
+        "notifyOnOrderDelivery": true,
+        "notifyOnException": true
+    }
+}

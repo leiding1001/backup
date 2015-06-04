@@ -1,0 +1,12 @@
+提货+图片上传
+curl -X POST -H "Content-Type: application/json" -d '{"milestoneDetails":{"actual":"2015-05-13T13:41:40.366+0800","attachments":[],"comments":"hi every one","exceptions":[],"id":"MILESTONE_4","latitude":31.230133,"longitude":121.534684,"reportedAt":"2015-05-13T13:41:40.366+0800","reportedBy":"??????","sla":"2015-05-11T18:00:00.000+0800"}}' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/milestoneupdate
+
+curl -T image.jpg -X PUT -H "Content-Type: image/jpeg" -H "Content-Disposition: attachment;filename=image/jpeg" -H "Accept: application/json" -H "latitude: 31.230409" -H "longitude: 121.534456" -d 'undefined' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/driverupload/pickup
+
+在途事件+图片上传
+curl -X PUT -H "Content-Type: application/json"  -d '{"driverEvent":{"eventType":"B","latitude":31.230122,"longitude":121.534681,"message":"what\u0027s wrong"}}' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/event
+curl -X PUT -T image.jpg -H "Content-Type: image/jpeg" -H "Content-Disposition: attachment;filename=image/jpeg" -H "Accept: application/json" -H "latitude: 31.230409" -H "longitude: 121.534456" -d 'undefined' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/driverupload/transitevent
+
+送货+图片上传(非ePOD)
+curl -X POST -H "Content-Type: application/json" -d '{"milestoneDetails":{"actual":"2015-05-13T13:43:25.357+0800","attachments":[],"comments":"everything\u0027s ok","exceptions":[],"id":"MILESTONE_5","latitude":31.23008,"longitude":121.534699,"reportedAt":"2015-05-13T13:43:25.357+0800","reportedBy":"??????","sla":"2015-05-18T18:00:00.000+0800"}}' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/milestoneupdate
+curl -X PUT -T image.jpg -H "Content-Type: image/jpeg" -H "Content-Disposition: attachment;filename=image/jpeg" -H "Accept: application/json" -H "latitude: 31.230409" -H "longitude: 121.534456" -d 'undefined' http://192.168.1.142:9090/ws/xtt/t/54PLFE7FTXYQHEBMEOQKFCNB/driverupload/delivery

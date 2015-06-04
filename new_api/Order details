@@ -1,0 +1,118 @@
+Order details 
+
+{ 
+    "token": { 
+        "creationDate": "2015-03-23T14:33:26.211+08:00", 
+        "expirationDate": "2015-05-22T14:33:26.211+08:00", 
+        "order": { 
+            "id": "1982394", 
+            "shipper": "中国宏光", 
+            "num": "SH00202003751", 
+            "erp": 20150318026, 
+            "load": false, 
+            "unload": false, 
+           "lines": [ 
+                        { 
+                        "product": "手机", 
+                        "type": 4, 
+                        "quantity": 100 
+                        }, 
+                        { 
+                        "product": "西瓜", 
+                        "type": 2 
+                        } 
+                    ], 
+            "milestones": [ 
+                { 
+                    "id": "MILESTONE_1", 
+                    "actual": "2015-03-23T13:19:36.493+08:00", 
+                    "source": "SHIPPER" 
+                }, 
+                { 
+                    "id": "MILESTONE_3", 
+                    "actual": "2015-03-23T14:33:26.130+08:00", 
+                    "source": "ME" 
+                }, 
+                { 
+                    "id": "MILESTONE_4", 
+                    "actual": "2015-04-01T17:50:11+08:00", 
+                    "sla": "2015-03-23T18:00:00+08:00", 
+                    "exceptions": [ 
+                        { 
+                            "time": "2015-05-26T10:45:45.770+08:00", 
+                            "comments": "(1)", 
+                            "type": "C", 
+                            "source": "DRIVER" 
+                        }, 
+                        { 
+                            "time": "2015-05-26T10:46:33.640+08:00", 
+                            "comments": "你个毛料理", 
+                            "type": "B", 
+                            "source": "DRIVER" 
+                        }, 
+                        { 
+                            "time": "2015-05-26T10:45:45.770+08:00", 
+                            "comments": "(1)", 
+                            "type": "D", 
+                             
+                             
+                            "source": "DRIVER" 
+                        } 
+                    ], 
+                    "source": "DRIVER" 
+                }, 
+                { 
+                    "id": "MILESTONE_5", 
+                    "sla": "2015-03-23T18:00:00+08:00", 
+                    "source": "UNKNOWN" 
+                }, 
+                { 
+                    "id": "MILESTONE_6", 
+                    "source": "UNKNOWN" 
+                } 
+            ], 
+            "truckType": 1, 
+            "transportType": "LTL", 
+            "quantity": 50, 
+            "kg": 1100, 
+            "cmb": 1.03, 
+            "contact": { 
+                "company": "中国宏光" , 
+                "hotline": "1234567" , 
+                "email": "123@otms.com" , 
+                "logo":"" 
+
+            }, 
+            "isEpodRequired": true, 
+            "isRecalled": false, 
+            "barcode": "0600879764937", 
+            "epodStatus": "CLIENT_REJECTED", 
+
+            "isShipFromOnline": false, 
+            "isShipToOnline": false, 
+            "from": { 
+                "company": "上海仓库", 
+                "addr": "上海松江区", 
+                "contact": "梁国刘", 
+                "mobile": 15601858927, 
+                "phone": 87654321, 
+                "start": "2015-03-23T00:00:00+08:00", 
+                "end": "2015-03-23T18:00:00+08:00", 
+                "lat": 12.45, 
+                "lng": 135.4 
+            }, 
+            "to": { 
+                "company": "sss", 
+                "addr": 上海市浦东新区", 
+                "contact": "宿舍", 
+                "mobile": 15601858927, 
+                "phone": "456789", 
+                "start": "2015-03-23T00:00:00+08:00", 
+                "end": "2015-03-23T18:00:00+08:00", 
+                "lat": 87.45, 
+                "lng": 935.4, 
+                "fence": 5000 
+            } 
+        } 
+    } 
+}

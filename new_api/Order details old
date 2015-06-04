@@ -1,0 +1,149 @@
+{
+    "token": {
+        "id": "UVTBZPTAHIPAATP2HZRECWTH",
+        "type": "Order",
+        "role": "Driver",
+        "creationDate": "2015-06-04T11:40:09.663+08:00",
+        "expirationDate": "2015-06-15T00:00:00+08:00",
+        "order": {
+            "shipperName": "BX贸易有限公司",
+            "orderNumber": "BX00101002602",
+            "clientReferenceNumber": 123,
+            "loadingByDriver": false,
+            "unloadingByDriver": false,
+            "milestones": [
+                {
+                    "id": "MILESTONE_1",
+                    "actual": "2015-06-04T11:35:18.761+08:00",
+                    "updateSource": "SHIPPER"
+                },
+                {
+                    "id": "MILESTONE_3",
+                    "actual": "2015-06-04T11:40:09.248+08:00",
+                    "updateSource": "ME"
+                },
+                {
+                    "id": "MILESTONE_4",
+                    "actual": "2015-06-04T11:40:36.607+08:00",
+                    "sla": "2015-06-04T18:00:00+08:00",
+                    "exceptions": [
+                        {
+                            "claimedAt": "2015-06-04T11:40:47.419+08:00",
+                            "comments": "bbbbbb",
+                            "claimedBy": "",
+                            "type": "B",
+                            "milestone": "MILESTONE_4",
+                            "orderId": 0,
+                            "updateSource": "DRIVER"
+                        },
+                        {
+                            "claimedAt": "2015-06-04T11:40:36.765+08:00",
+                            "comments": "dghhgg (1)",
+                            "claimedBy": "",
+                            "type": "D",
+                            "milestone": "MILESTONE_4",
+                            "orderId": 0,
+                            "updateSource": "DRIVER"
+                        },
+                        {
+                            "claimedAt": "2015-06-04T11:40:36.765+08:00",
+                            "comments": "dghhgg (1)",
+                            "claimedBy": "",
+                            "type": "C",
+                            "milestone": "MILESTONE_4",
+                            "orderId": 0,
+                            "updateSource": "DRIVER"
+                        }
+                    ],
+                    "updateSource": "DRIVER"
+                },
+                {
+                    "id": "MILESTONE_5",
+                    "actual": "2015-06-04T11:40:59.921+08:00",
+                    "sla": "2015-06-05T18:00:00+08:00",
+                    "exceptions": [
+                        {
+                            "claimedAt": "2015-06-04T11:41:00.081+08:00",
+                            "comments": "yyyyyyy (1)",
+                            "claimedBy": "",
+                            "type": "D",
+                            "milestone": "MILESTONE_5",
+                            "orderId": 0,
+                            "updateSource": "DRIVER"
+                        },
+                        {
+                            "claimedAt": "2015-06-04T11:41:00.081+08:00",
+                            "comments": "yyyyyyy (1)",
+                            "claimedBy": "",
+                            "type": "C",
+                            "milestone": "MILESTONE_5",
+                            "orderId": 0,
+                            "updateSource": "DRIVER"
+                        }
+                    ],
+                    "updateSource": "DRIVER"
+                }
+            ],
+            "truckType": 1,
+            "transportType": "LTL",
+            "totalQuantity": 0,
+            "totalWeight": 32,
+            "totalVolume": 22,
+            "pickupPointCompanyName": "东796",
+            "origin": "20****,",
+            "pickupPointAddress": "上海市浦东新区东方路796号",
+            "pickupPointContactName": "徐",
+            "pickupPointContactDeskPhoneFull": "",
+            "deliveryPointCompanyName": "收货盛",
+            "destination": "20****,",
+            "deliveryPointAddress": "上海市盛夏路1107弄",
+            "deliveryPointContactName": "carry",
+            "deliveryPointContactPhone": 26662589,
+            "deliveryPointContactPhoneAreaCode": "021",
+            "deliveryPointContactEmail": "otms123456@163.com",
+            "deliveryPointContactDeskPhoneFull": "021 26662589",
+            "deliveryDate": "2015-06-05T00:00:00+08:00",
+            "pickupDate": "2015-06-04T00:00:00+08:00",
+            "pickupTime": 1,
+            "deliveryTime": 1,
+            "contactInformation": {
+                "hotline": 10086,
+                "email": "binxia.xu@otms.cn",
+                "companyName": "BX贸易有限公司"
+            },
+            "isEpodRequired": false,
+            "isRecalled": false,
+            "barcodeNumber": "0132889187616",
+            "epodStatus": "NOT_REQUIRED",
+            "isDriverOnline": false,
+            "isShipFromOnline": true,
+            "isShipToOnline": true,
+            "from": {
+                "company": "东796",
+                "zipcode": "20****,",
+                "addr": "上海市浦东新区东方路796号",
+                "contact": "徐",
+                "start": "2015-06-04T00:00:00+08:00",
+                "end": "2015-06-04T18:00:00+08:00",
+                "lat": 31.234028,
+                "lng": 121.532104,
+                "fence": 2
+            },
+            "to": {
+                "company": "收货盛",
+                "zipcode": "20****,",
+                "addr": "上海市盛夏路1107弄",
+                "contact": "carry",
+                "phone": 26662589,
+                "start": "2015-06-05T00:00:00+08:00",
+                "end": "2015-06-05T18:00:00+08:00",
+                "lat": 31.205248,
+                "lng": 121.638581,
+                "fence": 2.5
+            }
+        },
+        "notifyOnOrderPickup": true,
+        "notifyOnOrderDelivery": true,
+        "notifyOnException": true
+    }
+}
