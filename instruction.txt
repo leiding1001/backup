@@ -24,24 +24,6 @@ shaohua.deng: shaohua.deng@otms.cn
 http://maps.google.com/maps/api/geocode/json?latlng=31.209431666666667,121.53479999999999&language=zh-CN&sensor=false
 http://maps.google.com/maps/api/geocode/json?address=中国上海市浦东新区世纪公园锦康路400号&language=zh-CN&sensor=false
 
-getDriverOrders
-
-https://demo.otms.cn/ws/xtt/d/M2APVU57RLG4GAMWOEMISEW3/driverOrders/1
-orderDetails
-https://demo.otms.cn/ws/xtt/t/53LOMSGY5NZG4NMMOVUPYAZP
-
-
-xia.shuai
- 	http://192.168.1.177:8080
- 	ssh builder@192.168.1.177
- 	otmsawesome
-otms
-	http://192.168.1.33:8080
-	ssh builder@192.168.1.33
-	otms
-cloudant.com
- shaohuadeng -- 12345678
-
 
 
 
